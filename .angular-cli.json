@@ -1,0 +1,62 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "project": {
+      "name": "myfloor-web"
+    },
+    "apps": [{
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "favicon.ico",
+        { "glob": "assets", "input": "./", "output": "./" },
+        { "glob": "fonts", "input": "./", "output": "./" }
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "myfloor",
+      "styles": [
+        "styles.scss"
+      ],
+      "scripts": [
+        "../src/assets/select2.min.js",
+        "../src/assets/jquery.fancybox.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "local": "environments/environment.ts",
+        "local-myfloor": "environments/environment.local-myfloor.ts",
+        "build": "environments/environment.build.ts"
+      }
+    }],
+    "e2e": {
+      "protractor": {
+        "config": "./protractor.conf.js"
+      }
+    },
+    "lint": [{
+        "project": "src/tsconfig.app.json"
+      },
+      {
+        "project": "src/tsconfig.spec.json"
+      },
+      {
+        "project": "e2e/tsconfig.e2e.json"
+      }
+    ],
+    "test": {
+      "karma": {
+        "config": "./karma.conf.js"
+      }
+    },
+    "defaults": {
+      "serve": {
+        "port": 4200
+      },
+      "styleExt": "scss",
+      "component": {}
+    }
+  }
